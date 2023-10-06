@@ -170,10 +170,10 @@ void ConvoScreen::sendMessage(){
 	Message message = Messages.sendText(convo, defaultProfile.nickname);
 	convoBox->addMessage(message);
 
-	Message message = Messages.sendText(convo, text);
-	if(message.uid == 0) return;
+	Message message2 = Messages.sendText(convo, text);
+	if(message2.uid == 0) return;
 
-	convoBox->addMessage(message);
+	convoBox->addMessage(message2);
 	//convoBox->addMessage("convoid" + convo.uid);
 }
 
