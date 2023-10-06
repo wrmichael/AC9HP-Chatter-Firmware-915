@@ -166,7 +166,7 @@ void ConvoScreen::sendMessage(){
 	if(text == "") return;
 
 	textEntry->clear();
-	Profile defaultProfile = Profile{};
+	Profile defaultProfile = Profiles.getMyProfile();
 	Message message = Messages.sendText(convo, defaultProfile.nickname);
 	convoBox->addMessage(message);
 
