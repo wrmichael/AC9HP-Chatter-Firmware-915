@@ -28,6 +28,22 @@ InboxScreen::InboxScreen() : LVScreen(), apop(this){
 			fren.uid=uid2;
 			Storage.Friends.add(fren);
 		};
+	}
+
+
+	if(Storage.Friends.all().size() == 1){
+
+		//UUID uuid = UUID("0b6e72cc-63c6-11ee-8c99-0242ac120002");
+
+		// Convert the UUID to a uid_t variable
+		uid_t uid2 = (uid_t) 123456;	
+		//UID_t uid2 = 1;
+		Friend fren = Storage.Friends.get(uid2);
+		//if(fren.uid == 0) fren.uid=1;
+		if(fren.uid == 0){
+			fren.uid=uid2;
+			Storage.Friends.add(fren);
+		};
 
 		auto user = new UserWithMessage(obj, fren);
 		lv_group_add_obj(inputGroup, user->getLvObj());
@@ -90,6 +106,7 @@ InboxScreen::InboxScreen() : LVScreen(), apop(this){
 	//add static friend uid=1 
 	 ///UUID uuid = UUID("0b6e72cc-63c6-11ee-8c99-0242ac120002");
 
+	 /*
 	// Convert the UUID to a uid_t variable
 	uid_t uid = 123456; //(uid_t) uuid.getMostSignificantBits();
 
@@ -115,7 +132,7 @@ InboxScreen::InboxScreen() : LVScreen(), apop(this){
 			params->ctx->openConvo(params->uid);
 		}, LV_EVENT_CLICKED, &params.back());
 		userElements.push_back(user);
-
+		*/
 
 
 

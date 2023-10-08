@@ -3,8 +3,13 @@
     "",
     "\\src",
     "\\src\\Interface",
-    "\\src\\Services"
+    "\\src\\JigHWTest",
+    "\\src\\Modals",
+    "\\src\\Model",
+    "\\src\\Screens",
+    "\\src\\Services",
+    "\\src\\Services\\Pair"
   ],
-  "SelectedNode": "\\src\\Services\\MessageService.cpp",
+  "SelectedNode": "\\src\\Interface\\LVSelectable.cpp",
   "PreviewInSolutionExplorer": false
 }

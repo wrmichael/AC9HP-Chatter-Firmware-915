@@ -1,3 +1,5 @@
+//#include <TFT.h>
+
 #include <Arduino.h>
 #include <CircuitOS.h>
 #include <Chatter.h>
@@ -210,4 +212,3 @@ void loop(){
 	lv_timer_handler();
 	LoopManager::loop();
 }
-

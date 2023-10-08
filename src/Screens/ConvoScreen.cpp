@@ -7,7 +7,7 @@
 #include "../Fonts/font.h"
 #include "../Services/BuzzerService.h"
 #include "../Services/ProfileService.h"
-
+#include <sstream>
 
 ConvoScreen::ConvoScreen(UID_t uid) : convo(uid){
 	fren = Storage.Friends.get(uid);
@@ -163,14 +163,21 @@ void ConvoScreen::buttonReleased(uint i){
 
 void ConvoScreen::sendMessage(){
 	std::string text = textEntry->getText();
+	std::stringstream ss; 
+
 	if(text == "") return;
 
 	textEntry->clear();
 	Profile defaultProfile = Profiles.getMyProfile();
-	Message message = Messages.sendText(convo, defaultProfile.nickname);
-	convoBox->addMessage(message);
 
-	Message message2 = Messages.sendText(convo, text);
+	
+	
+
+	ss << "DE " << defaultProfile.nickname <<":" << text;
+	std::string s = ss.str();
+
+	
+	Message message2 = Messages.sendText(convo, s);
 	if(message2.uid == 0) return;
 
 	convoBox->addMessage(message2);
